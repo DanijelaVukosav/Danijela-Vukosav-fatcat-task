@@ -50,6 +50,10 @@ export const FormExample = () => {
                     useMutation={() => mutation}
                     validationSchema={validationSchema}
                     successData={{ message: 'Great, success post data!' }}
+                    submitButtonData={{
+                        className:
+                            'w-full rounded-lg text-[#475447] p-[15px] bg-[#ffee8d]',
+                    }}
                     renderForm={({ register, errors }) => (
                         <>
                             <TextField

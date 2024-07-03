@@ -18,15 +18,17 @@ interface SuccessData {
     resetFormOnSuccess?: boolean;
 }
 
+interface SubmitButtonData {
+    label?: string;
+    loadingLabel?: string;
+    className?: string;
+}
+
 interface FormGeneratorProps<T extends FieldValues, K extends ZodRawShape> {
     useMutation: () => UseMutationResult<unknown, unknown, T>;
     validationSchema: ZodObject<K, 'strip', ZodTypeAny, T, T>;
     successData: SuccessData;
-    submitButtonData?: {
-        label?: string;
-        loadingLabel?: string;
-        className?: string;
-    };
+    submitButtonData?: SubmitButtonData;
     renderForm: (props: {
         register: ReturnType<typeof useForm<T>>['register'];
         errors: FieldErrors<T>;
