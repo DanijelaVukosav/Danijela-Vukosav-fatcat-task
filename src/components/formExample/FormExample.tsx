@@ -54,7 +54,7 @@ export const FormExample = () => {
                         <>
                             <TextField
                                 margin="normal"
-                                required
+                                // required
                                 fullWidth
                                 id="title"
                                 label="Title"
@@ -65,7 +65,7 @@ export const FormExample = () => {
                             />
                             <TextField
                                 margin="normal"
-                                required
+                                // required
                                 fullWidth
                                 id="body"
                                 label="Body"
