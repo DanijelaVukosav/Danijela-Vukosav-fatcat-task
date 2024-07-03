@@ -1,19 +1,14 @@
 import { useMemo } from 'react';
 
-// interface ListItemProperties<T extends Record<string, unknown>> {
-//     key: keyof T;
-//     type: string;
-// }
-
 interface ListItemProps<T> {
     item: T;
-    properties: Array<keyof T>; //ListItemProperties<T>[];
+    properties: Array<keyof T>;
     key: string;
 }
 
 interface ListProps<T> {
     items: T[] | null | undefined;
-    properties: Array<keyof T>; //ListItemProperties<T>[];
+    properties: Array<keyof T>;
 }
 
 export const ListItem = <T,>({ item, properties, key }: ListItemProps<T>) => {

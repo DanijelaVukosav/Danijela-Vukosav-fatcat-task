@@ -14,12 +14,12 @@ import {
 const PREDEFINED_USER_PROPERTIES: Array<keyof User> = [
     'id',
     'name',
+    'username',
     'email',
-    'dateOfBirth',
     'phone',
 ];
 
-const UserList: FC = () => {
+export const UserList: FC = () => {
     const {
         data: users,
         error,
@@ -27,7 +27,7 @@ const UserList: FC = () => {
     } = useQuery<User[], Error, User[]>(USERS_QUERY_NAME, fetchUsers);
 
     if (isLoading) return <Loading />;
-    if (error) return <Error message={error} />;
+    if (error) return <Error message={error.message} />;
 
     return (
         <div>
@@ -36,5 +36,3 @@ const UserList: FC = () => {
         </div>
     );
 };
-
-export default UserList;
