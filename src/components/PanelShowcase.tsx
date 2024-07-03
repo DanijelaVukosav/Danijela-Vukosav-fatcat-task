@@ -1,12 +1,14 @@
 import { FC } from 'react';
 
 import clsx from 'clsx';
+
 interface Panel {
     title: string;
     description: string;
     image: string;
 }
-interface PanelShowcaseProps {
+
+export interface PanelShowcaseProps {
     items: Panel[];
 }
 

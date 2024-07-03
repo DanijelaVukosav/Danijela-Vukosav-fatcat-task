@@ -1,10 +1,7 @@
 import { FC } from 'react';
 
-const DEFAULT_ERROR_MESSAGE =
-    'Oops something went wrong. Try to refresh this page or feel free to contact us if the problem presists.';
-
 interface ErrorProps {
-    message: null | Error;
+    message: string;
 }
 
 export const Error: FC<ErrorProps> = ({ message }) => {
@@ -28,9 +25,7 @@ export const Error: FC<ErrorProps> = ({ message }) => {
                 <h1 className="mt-5 text-[36px] font-bold text-slate-800 lg:text-[50px]">
                     Error
                 </h1>
-                <p className="text-slate-600 mt-5 lg:text-lg">
-                    {message ?? DEFAULT_ERROR_MESSAGE}
-                </p>
+                <p className="text-slate-600 mt-5 lg:text-lg">{message}</p>
             </div>
         </div>
     );

@@ -1,4 +1,4 @@
-import { FC, MouseEvent } from 'react';
+import { FC, MouseEventHandler } from 'react';
 
 import clsx from 'clsx';
 
@@ -9,11 +9,11 @@ interface Card {
     image: string;
     description: string;
     background: string;
-    onClick: (event: MouseEvent<Card>) => void;
+    onClick: MouseEventHandler<HTMLButtonElement> | undefined;
     buttonText: string;
 }
 
-interface CardsProps {
+export interface CardsProps {
     cards: Card[];
 }
 
@@ -49,9 +49,7 @@ export const Cards: FC<CardsProps> = ({ cards }) => {
                                     {description}
                                 </div>
                             </div>
-                            <Button<Card> onClick={onClick}>
-                                {buttonText}
-                            </Button>
+                            <Button onClick={onClick}>{buttonText}</Button>
                         </div>
                     )
                 )}
